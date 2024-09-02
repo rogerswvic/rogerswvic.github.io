@@ -1,3 +1,4 @@
+alert("JavaScript is working!");
 let totalAmount = 0;
 
 function addItem() {
