@@ -56,4 +56,85 @@
 
     <script src="script.js"></script>
     </body>
- 
+ body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.orders-container {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="number"], select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+let totalAmount = 0;
+
+function addItem() {
+    const itemSelect = document.getElementById('item');
+    const itemName = itemSelect.options[itemSelect.selectedIndex].text;
+    const itemValue = parseFloat(itemSelect.value.match(/\d+(\.\d{1,2})?/)[0]);
+    const quantity = parseInt(document.getElementById('quantity').value);
+
+    const orderList = document.getElementById('orderList');
+    const listItem = document.createElement('li');
+    listItem.textContent = `${itemName} x ${quantity}`;
+    orderList.appendChild(listItem);
+
+    totalAmount += itemValue * quantity;
+    document.getElementById('totalAmount').textContent = totalAmount.toFixed(2);
+}
+
+function placeOrder() {
+    if (totalAmount === 0) {
+        alert("Your order is empty!");
+    } else {
+        alert(`Your order total is $${totalAmount.toFixed(2)}. Thank you for ordering!`);
+        // Reset order
+        document.getElementById('orderList').innerHTML = '';
+        document.getElementById('totalAmount').textContent = '0.00';
+        totalAmount = 0;
+    }
+}
+
