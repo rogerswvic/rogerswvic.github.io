@@ -24,30 +24,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cafe Orders</title>
+    <title>Order Ahead</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Cafe Orders</h1>
-        <table id="ordersTable">
-            <thead>
-                <tr>
-                    <th>Order ID</th>
-                    <th>Customer Name</th>
-                    <th>Order Date</th>
-                    <th>Total Amount</th>
-                    <th>Payment Status</th>
-                    <th>Payment Method</th>
-                    <th>Notes</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Order rows will be added here by JavaScript -->
-            </tbody>
-        </table>
+    <div class="order-container">
+        <h1>Order Ahead</h1>
+        <form id="orderForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="items">Order Items:</label>
+            <textarea id="items" name="items" placeholder="Enter your order here..." required></textarea>
+
+            <label for="paymentMethod">Payment Method:</label>
+            <select id="paymentMethod" name="paymentMethod" required>
+                <option value="cash">Cash</option>
+                <option value="card">Card</option>
+                <option value="online">Online</option>
+            </select>
+
+            <label for="notes">Special Requests:</label>
+            <textarea id="notes" name="notes" placeholder="Any special requests?"></textarea>
+
+            <button type="submit">Submit Order</button>
+        </form>
+
+        <div id="orderSummary" class="hidden">
+            <h2>Order Summary</h2>
+            <p id="summaryName"></p>
+            <p id="summaryItems"></p>
+            <p id="summaryPaymentMethod"></p>
+            <p id="summaryNotes"></p>
+        </div>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
+
