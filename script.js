@@ -1,29 +1,45 @@
-alert("JavaScript is working!");
-let totalAmount = 0;
-
-function addItem() {
-    const itemSelect = document.getElementById('item');
-    const itemName = itemSelect.options[itemSelect.selectedIndex].text;
-    const itemValue = parseFloat(itemSelect.value.match(/\d+(\.\d{1,2})?/)[0]);
-    const quantity = parseInt(document.getElementById('quantity').value);
-
-    const orderList = document.getElementById('orderList');
-    const listItem = document.createElement('li');
-    listItem.textContent = `${itemName} x ${quantity}`;
-    orderList.appendChild(listItem);
-
-    totalAmount += itemValue * quantity;
-    document.getElementById('totalAmount').textContent = totalAmount.toFixed(2);
-}
-
-function placeOrder() {
-    if (totalAmount === 0) {
-        alert("Your order is empty!");
-    } else {
-        alert(`Your order total is $${totalAmount.toFixed(2)}. Thank you for ordering!`);
-        // Reset order
-        document.getElementById('orderList').innerHTML = '';
-        document.getElementById('totalAmount').textContent = '0.00';
-        totalAmount = 0;
+// Sample order data
+const orders = [
+    {
+        orderId: 1,
+        customerName: "John Doe",
+        orderDate: "2024-09-04",
+        totalAmount: 15.99,
+        paymentStatus: "paid",
+        paymentMethod: "card",
+        notes: "Extra sugar"
+    },
+    {
+        orderId: 2,
+        customerName: "Jane Smith",
+        orderDate: "2024-09-03",
+        totalAmount: 7.50,
+        paymentStatus: "pending",
+        paymentMethod: "cash",
+        notes: ""
     }
+];
+
+// Function to populate the table
+function populateTable() {
+    const tableBody = document.querySelector("#ordersTable tbody");
+
+    orders.forEach(order => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+            <td>${order.orderId}</td>
+            <td>${order.customerName}</td>
+            <td>${order.orderDate}</td>
+            <td>$${order.totalAmount.toFixed(2)}</td>
+            <td>${order.paymentStatus}</td>
+            <td>${order.paymentMethod}</td>
+            <td>${order.notes}</td>
+        `;
+
+        tableBody.appendChild(row);
+    });
 }
+
+// Call the function to populate the table when the page loads
+window.onload = populateTable;
