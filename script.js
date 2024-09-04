@@ -1,45 +1,19 @@
-// Sample order data
-const orders = [
-    {
-        orderId: 1,
-        customerName: "John Doe",
-        orderDate: "2024-09-04",
-        totalAmount: 15.99,
-        paymentStatus: "paid",
-        paymentMethod: "card",
-        notes: "Extra sugar"
-    },
-    {
-        orderId: 2,
-        customerName: "Jane Smith",
-        orderDate: "2024-09-03",
-        totalAmount: 7.50,
-        paymentStatus: "pending",
-        paymentMethod: "cash",
-        notes: ""
-    }
-];
+document.getElementById('orderForm').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-// Function to populate the table
-function populateTable() {
-    const tableBody = document.querySelector("#ordersTable tbody");
+    const name = document.getElementById('name').value;
+    const items = document.getElementById('items').value;
+    const paymentMethod = document.getElementById('paymentMethod').value;
+    const notes = document.getElementById('notes').value;
 
-    orders.forEach(order => {
-        const row = document.createElement("tr");
+    // Display the order summary
+    document.getElementById('summaryName').textContent = `Name: ${name}`;
+    document.getElementById('summaryItems').textContent = `Order Items: ${items}`;
+    document.getElementById('summaryPaymentMethod').textContent = `Payment Method: ${paymentMethod}`;
+    document.getElementById('summaryNotes').textContent = `Special Requests: ${notes || 'None'}`;
 
-        row.innerHTML = `
-            <td>${order.orderId}</td>
-            <td>${order.customerName}</td>
-            <td>${order.orderDate}</td>
-            <td>$${order.totalAmount.toFixed(2)}</td>
-            <td>${order.paymentStatus}</td>
-            <td>${order.paymentMethod}</td>
-            <td>${order.notes}</td>
-        `;
+    document.getElementById('orderSummary').classList.remove('hidden');
 
-        tableBody.appendChild(row);
-    });
-}
-
-// Call the function to populate the table when the page loads
-window.onload = populateTable;
+    // Clear the form
+    document.getElementById('orderForm').reset();
+});
