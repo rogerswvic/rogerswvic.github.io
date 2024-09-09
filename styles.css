@@ -24,9 +24,8 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #666;            /* Make the links gray */
+    color: #fff;
     text-decoration: none;
-    font-size: 2em;         /* Double the size of the links */
 }
 
 .content {
@@ -34,7 +33,5 @@ nav ul li a {
 }
 
 h1 {
-    color: #666;           /* Make the headers gray */
-    font-weight: 800;      /* Make the headers twice as thick */
-    font-size: 4em;        /* Double the size of the headers */
+    color: #333;
 }
