@@ -24,8 +24,9 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #666;            /* Make the links gray */
     text-decoration: none;
+    font-size: 2em;         /* Double the size of the links */
 }
 
 .content {
