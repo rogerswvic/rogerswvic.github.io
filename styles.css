@@ -41,17 +41,7 @@ body {
     margin: 0;
     padding: 20px;
 }
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
+/* Container styling */
 .container {
     background-color: #fff;
     padding: 20px;
@@ -59,19 +49,22 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
+    margin: auto;
 }
 
-h1 {
+/* General styling within the container */
+.container h1 {
     text-align: center;
     color: #333;
 }
 
-label {
+.container label {
     display: block;
     margin: 10px 0 5px;
 }
 
-input, select {
+.container input, 
+.container select {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -79,7 +72,7 @@ input, select {
     border-radius: 4px;
 }
 
-button {
+.container button {
     width: 100%;
     padding: 10px;
     background-color: #5cb85c;
@@ -90,19 +83,25 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.container button:hover {
     background-color: #4cae4c;
 }
 
-.hidden {
+.container p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.container #totalPrice {
+    color: #5cb85c;
+}
+
+.container .hidden {
     display: none;
 }
 
-#confirmationMessage {
+.container #confirmationMessage {
     text-align: center;
 }
 
-#totalPrice {
-    color: #5cb85c;
-}
 
