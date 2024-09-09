@@ -20,3 +20,75 @@
     </div>
 </body>
 </html>
+<!-- Order Ahead Box -->
+<div id="order-ahead-box" class="order-ahead-box">
+    <h2>Order Ahead</h2>
+    <form id="order-form">
+        <div class="item-list">
+            <label for="item">Item:</label>
+            <select id="item" name="item">
+                <option value="item1" data-price="10.00">Item 1 - $10.00</option>
+                <option value="item2" data-price="15.00">Item 2 - $15.00</option>
+                <option value="item3" data-price="20.00">Item 3 - $20.00</option>
+            </select>
+        </div>
+        <div class="customer-info">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="total-price">
+            <label>Total Price:</label>
+            <span id="total-price">$0.00</span>
+        </div>
+        <button type="submit">Submit Order</button>
+    </form>
+
+    <style>
+        /* Scoped styling for the Order Ahead Box */
+#order-ahead-box {
+    border: 1px solid #ddd;
+    padding: 20px;
+    max-width: 300px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+#order-ahead-box h2 {
+    text-align: center;
+}
+
+#order-ahead-box .item-list,
+#order-ahead-box .customer-info,
+#order-ahead-box .total-price {
+    margin-bottom: 15px;
+}
+
+#order-ahead-box label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#order-ahead-box input[type="text"],
+#order-ahead-box select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+#order-ahead-box button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#order-ahead-box button:hover {
+    background-color: #218838;
+}
+    </style>
+</div>
