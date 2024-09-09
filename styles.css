@@ -57,7 +57,5 @@ h1 {
     text-align: center; /* Center text horizontally */
     font-size: 1.2em; /* Slightly larger text size */
     padding: 40px; /* Increase padding inside the square */
-    box-sizing: border-box; /* Include padding in width and height */
-    overflow-y: auto; /* Scroll if content overflows */
     line-height: 1.5em; /* Space between lines */
 }
