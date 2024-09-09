@@ -17,3 +17,19 @@ document.getElementById('orderForm').addEventListener('submit', function(event) 
     // Clear the form
     document.getElementById('orderForm').reset();
 });
+document.getElementById('orderForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Collect form data
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const item = document.getElementById('item').value;
+    const quantity = document.getElementById('quantity').value;
+
+    // Validate the form data (basic validation already handled by HTML)
+    if (name && email && item && quantity) {
+        // Hide the form and show the confirmation message
+        document.getElementById('orderForm').reset();
+        document.getElementById('confirmationMessage').classList.remove('hidden');
+    }
+});
