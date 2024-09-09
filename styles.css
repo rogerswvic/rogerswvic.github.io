@@ -101,4 +101,12 @@ button:hover {
 #confirmationMessage {
     text-align: center;
 }
+p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#totalPrice {
+    color: #5cb85c;
+}
 
