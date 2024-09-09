@@ -23,12 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Event listener for the "Add Item to Order" button
     addItemButton.addEventListener('click', addItemToOrder);
 
-    // Event listener to update the total price when the item selection changes
-    itemSelect.addEventListener('change', () => {
-        // Optionally, you could update the total price when the selection changes
-        // but this example keeps it as an "Add Item to Order" action only
-    });
-
     // Initialize total price
     updateTotalPrice();
 
@@ -49,4 +43,3 @@ document.addEventListener('DOMContentLoaded', () => {
         nameInput.value = ''; // Clear name input
     });
 });
-
