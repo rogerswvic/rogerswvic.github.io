@@ -15,9 +15,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to handle adding the selected item to the order
     const addItemToOrder = () => {
         const selectedOption = itemSelect.options[itemSelect.selectedIndex];
-        const price = parseFloat(selectedOption.getAttribute('data-price'));
-        totalPrice += price;
-        updateTotalPrice();
+        if (selectedOption) {
+            const price = parseFloat(selectedOption.getAttribute('data-price'));
+            if (!isNaN(price)) {
+                totalPrice += price;
+                updateTotalPrice();
+            } else {
+                console.error('Invalid price value');
+            }
+        } else {
+            console.error('No item selected');
+        }
     };
 
     // Event listener for the "Add Item to Order" button
