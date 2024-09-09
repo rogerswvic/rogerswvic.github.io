@@ -27,4 +27,25 @@ document.addEventListener('DOMContentLoaded', () => {
         alert(`Order submitted for ${name}!`);
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const itemSelect = document.getElementById('item');
+    const totalPriceSpan = document.getElementById('total-price');
+    let totalPrice = 0;
+
+    const updateTotalPrice = () => {
+        totalPriceSpan.textContent = `$${totalPrice.toFixed(2)}`;
+    };
+
+    const addItemToOrder = () => {
+        const selectedOption = itemSelect.options[itemSelect.selectedIndex];
+        const price = parseFloat(selectedOption.getAttribute('data-price'));
+        totalPrice += price;
+        updateTotalPrice();
+    };
+
+    document.getElementById('add-item-button').addEventListener('click', addItemToOrder);
+    
+    // Initialize total price
+    updateTotalPrice();
+});
 
