@@ -35,3 +35,28 @@ nav ul li a {
 h1 {
     color: #333;
 }
+
+/* Only target the .square class */
+.square-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height for the container */
+}
+
+.square {
+    width: 400px; /* Adjust width as needed */
+    height: 400px; /* Adjust height as needed */
+    background-color: #666; /* Background color of the square */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Text color */
+    text-align: center; /* Center text horizontally */
+    font-size: 1em; /* Text size */
+    padding: 20px; /* Padding inside the square */
+    box-sizing: border-box; /* Include padding in width and height */
+    overflow-y: auto; /* Scroll if content overflows */
+    line-height: 1.5em; /* Space between lines */
+    margin: auto; /* Center within the container */
+}
