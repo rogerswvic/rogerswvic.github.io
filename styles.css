@@ -47,13 +47,13 @@ h1 {
 
 /* Styles for the square */
 .square {
-    width: 1000px; /* Increase the width */
-    height: 1500px; /* Increase the height */
+    width: 600px; /* Increase the width */
+    height: 600px; /* Increase the height */
     background-color: #666; /* Background color of the square */
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white; /* Text color */
+    color: black; /* Text color */
     text-align: center; /* Center text horizontally */
     font-size: 1.2em; /* Slightly larger text size */
     padding: 40px; /* Increase padding inside the square */
