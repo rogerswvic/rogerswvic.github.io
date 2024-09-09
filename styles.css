@@ -48,7 +48,7 @@ h1 {
 /* Styles for the square */
 .square {
     width: 1200px; /* Increase the width */
-    height: 3000px; /* Increase the height */
+    height: 1500px; /* Increase the height */
     background-color: #666; /* Background color of the square */
     display: flex;
     justify-content: center;
